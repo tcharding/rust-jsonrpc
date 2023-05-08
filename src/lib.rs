@@ -24,6 +24,7 @@
 use serde::{Deserialize, Serialize};
 
 extern crate serde;
+/// Re-export for access to `serde_json` types found in our public API.
 pub extern crate serde_json;
 
 #[cfg(feature = "base64-compat")]
