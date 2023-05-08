@@ -641,11 +641,15 @@ impl crate::Client {
 
 #[cfg(test)]
 mod tests {
+    #[cfg(not(feature = "proxy"))]
     use serde_json::{Number, Value};
+    #[cfg(not(feature = "proxy"))]
     use std::net::{Shutdown, TcpListener};
     #[cfg(feature = "proxy")]
     use std::str::FromStr;
+    #[cfg(not(feature = "proxy"))]
     use std::{net, thread};
+    #[cfg(not(feature = "proxy"))]
     use std::sync::mpsc::sync_channel;
 
     use super::*;
